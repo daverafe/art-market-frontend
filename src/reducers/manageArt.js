@@ -1,7 +1,6 @@
 const manageArt = (state = {
-    users: [],
     art_posts: [],
-    cart: [],
+    cart: []
 }, action) => {
     return state 
 }
