@@ -1,9 +1,21 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function NavBar() {
     return (
         <div className="nav">
-
+            <Link to="/">
+                <button id="nav-home">Home</button>
+            </Link>
+            <Link to="/art_posts">
+                <button id="nav-art">Art</button>
+            </Link>
+            <Link to="/signup">
+                <button id="nav-sign-up">Sign Up</button>
+            </Link>
+            <Link to="/cart">
+                <button id="nav-cart">Cart</button>
+            </Link>
         </div>
     )
 }
