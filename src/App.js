@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import ArtPostsContainer from './components/ArtPostsContainer';
 import UserSignupForm from './components/UserSignupForm';
 import Cart from './components/Cart'
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/art_posts">
           <ArtPostsContainer />
         </Route>
         <Route exact path="/signup">
