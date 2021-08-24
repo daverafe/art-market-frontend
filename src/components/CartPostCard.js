@@ -1,13 +1,12 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {addToCart} from '../actions/artActions'
+import {removeFromCart} from '../actions/artActions'
 
-function ArtPostCard({artPost}) {
-
+function CartPostCard({artPost}) {
     const dispatch = useDispatch()
 
     const handleClick = (artPost) => {
-        dispatch(addToCart(artPost))
+        dispatch(removeFromCart(artPost))
     }
     
     return (
@@ -15,9 +14,9 @@ function ArtPostCard({artPost}) {
             <h2>{artPost.title}</h2>
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
-            <button onClick={() => handleClick(artPost)}>Add To Cart</button>
+            <button onClick={() => handleClick(artPost)}>Remove From Cart</button>
         </div>
     )
 }
 
-export default ArtPostCard
+export default CartPostCard

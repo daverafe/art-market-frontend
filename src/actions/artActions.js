@@ -7,3 +7,17 @@ export const fetchArt = () => {
         })
     }
 }
+
+export const addToCart = (artPost) => {
+    return {
+        type: "ADD_TO_CART",
+        payload: artPost
+    }
+}
+
+export const removeFromCart = (artPost) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        payload: artPost
+    }
+}

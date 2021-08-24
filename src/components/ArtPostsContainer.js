@@ -11,7 +11,7 @@ function ArtPostsContainer() {
 
     useEffect(() => {
         dispatch(fetchArt())
-    })
+    }, [])
     
     return (
         <div className="art-posts-container">

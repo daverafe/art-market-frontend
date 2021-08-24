@@ -8,7 +8,19 @@ const manageArt = (state = {
                 ...state,
                 art_posts: action.payload
             }
-            default:
+
+        case "ADD_TO_CART":
+            return {
+                ...state,
+                cart: [...state.cart, action.payload]
+            }
+
+        case "REMOVE_FROM_CART":
+            return {
+                ...state,
+                cart: state.cart.filter(art => art.id !== action.payload.id)
+            }
+        default:
             return state 
     }
 }
