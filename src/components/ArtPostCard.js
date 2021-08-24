@@ -1,11 +1,12 @@
 import React from 'react'
 
-function ArtPostCard(props) {
+function ArtPostCard({artPost}) {
     return (
         <div className="art-post-card">
-            <h2>{props.title}</h2>
-            <p>{props.price}</p>
-            <p>{props.description}</p>
+            <h2>{artPost.title}</h2>
+            <p>${artPost.price}</p>
+            <p>{artPost.description}</p>
+            <button>Add To Cart</button>
         </div>
     )
 }
