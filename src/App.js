@@ -5,6 +5,8 @@ import {BrowserRouter as Router,
 } from 'react-router-dom'
 import NavBar from './components/NavBar';
 import ArtPostsContainer from './components/ArtPostsContainer';
+import UserSignupForm from './components/UserSignupForm';
+import Cart from './components/Cart'
 
 function App() {
   return (
@@ -12,8 +14,14 @@ function App() {
       <div className="App">
       <NavBar />
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <ArtPostsContainer />
+        </Route>
+        <Route exact path="/signup">
+          <UserSignupForm />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
       </Switch>
       </div>
