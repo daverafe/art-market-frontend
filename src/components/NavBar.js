@@ -1,7 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 function NavBar() {
+
+    const users = useSelector(state => state.users)
+    // const currentUser = users.find(user => user.jwt)
+
     return (
         <div className="nav">
             <Link to="/">
@@ -10,9 +15,14 @@ function NavBar() {
             <Link to="/art_posts">
                 <button id="nav-art">Art</button>
             </Link>
-            <Link to="/signup">
-                <button id="nav-sign-up">Sign Up</button>
-            </Link>
+            {/* {currentUser ? */}
+                <Link to="/art_posts/new">
+                    <button id="nav-sign-up">Create Art Post</button>
+                </Link> 
+                <Link to="/signup">
+                    <button id="nav-sign-up">Sign Up</button>
+                </Link>
+        
             <Link to="/cart">
                 <button id="nav-cart">Cart</button>
             </Link>

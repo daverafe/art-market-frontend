@@ -8,6 +8,23 @@ export const fetchArt = () => {
     }
 }
 
+export const addArtPost = (art_post) => {
+    return (dispatch) => {
+        fetch('http://127.0.0.1:3000/art_posts', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify({art_post})
+        })
+        .then(resp => resp.json())
+        .then(art_post => {
+            dispatch({type: "ADD_ART_POST", payload: art_post})
+        })
+    }
+}
+
 
 export const addToCart = (artPost) => {
     return {

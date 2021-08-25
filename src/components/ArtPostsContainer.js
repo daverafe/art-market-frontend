@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import ArtPostCard from './ArtPostCard'
 import ArtPostSearchForm from './ArtPostSearchForm'
+import ArtPostCreateForm from './ArtPostCreateForm'
 import {useSelector} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 
@@ -28,6 +29,8 @@ function ArtPostsContainer() {
                 return <ArtPostCard key={artPost.id} artPost={artPost}/>
                 })}
             </Route>
+
+            <Route exact path="/art_posts/new" component={ArtPostCreateForm}/>
 
             <Route exact path="/art_posts/:id" component={(routeInfo) => {
                 const routeId = parseInt(routeInfo.match.params.id)

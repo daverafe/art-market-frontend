@@ -11,6 +11,7 @@ import UserSignupForm from './components/UserSignupForm';
 import Cart from './components/Cart'
 import HomePage from './components/HomePage';
 import {fetchArt} from './actions/artActions'
+import {fetchUsers} from './actions/userActions'
 
 function App() {
 
@@ -19,6 +20,10 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchArt())
+}, [])
+
+useEffect(() => {
+  dispatch(fetchUsers())
 }, [])
 
   return (

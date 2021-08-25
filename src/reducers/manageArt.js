@@ -9,6 +9,12 @@ const manageArt = (state = {
                 art_posts: action.payload
             }
 
+        case "ADD_ART_POST":
+            return {
+                ...state,
+                art_posts: [...state.art_posts, action.payload]
+            }
+
         case "ADD_TO_CART":
             return {
                 ...state,
