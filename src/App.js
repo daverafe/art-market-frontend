@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import {useEffect} from 'react'
 import './App.css';
 import {BrowserRouter as Router,
   Switch,
@@ -14,7 +14,7 @@ import {fetchArt} from './actions/artActions'
 
 function App() {
 
-  const artPosts = useSelector(state => state.art_posts)
+  const artPosts = useSelector(state => state.art.art_posts)
   const dispatch = useDispatch()
 
   useEffect(() => {

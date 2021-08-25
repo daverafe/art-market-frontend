@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import {createStore, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk' 
 import {Provider} from 'react-redux' 
-import manageArt from './reducers/manageArt';
+import rootReducer from './reducers/index';
 
-const store = createStore(manageArt, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>

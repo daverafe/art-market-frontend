@@ -7,7 +7,7 @@ import {Route, Switch} from 'react-router-dom'
 function ArtPostsContainer() {
 
     const [search, setSearch] = useState("")
-    const artPosts = useSelector(state => state.art_posts)
+    const artPosts = useSelector(state => state.art.art_posts)
 
 
     const handleChange = (event) => {
