@@ -25,6 +25,18 @@ export const addArtPost = (art_post) => {
     }
 }
 
+export const deleteArtPost = (art_post) => {
+    return (dispatch) => {
+        fetch(`http://127.0.0.1:3000/art_posts/${art_post.id}`, {
+            method: "DELETE",
+        })
+        .then(resp => resp.json())
+        .then(art_post => {
+            dispatch({type: "DELETE_ART_POST", payload: art_post})
+        })
+    }
+}
+
 
 export const addToCart = (artPost) => {
     return {

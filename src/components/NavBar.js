@@ -1,10 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 
 function NavBar() {
 
-    const users = useSelector(state => state.users)
+    // const users = useSelector(state => state.users)
     // const currentUser = users.find(user => user.jwt)
 
     return (
