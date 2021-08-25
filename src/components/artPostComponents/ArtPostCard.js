@@ -1,7 +1,7 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {addToCart} from '../actions/artActions'
-import {deleteArtPost} from '../actions/artActions'
+import {addToCart} from '../../actions/artActions'
+import {deleteArtPost} from '../../actions/artActions'
 import {Link} from 'react-router-dom'
 
 function ArtPostCard({artPost}) {

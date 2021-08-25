@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import { addArtPost } from '../actions/artActions'
+import { addArtPost } from '../../actions/artActions'
 
 function ArtPostCreateForm() {
 

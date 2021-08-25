@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import CartPostCard from './CartPostCard'
+import CartPostCard from '../CartPostCard'
 
 function Cart() {
 
