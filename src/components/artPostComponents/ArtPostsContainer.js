@@ -4,6 +4,7 @@ import ArtPostSearchForm from './ArtPostSearchForm'
 import ArtPostCreateForm from './ArtPostCreateForm'
 import {useSelector} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
+import ArtPostEditForm from './ArtPostEditForm'
 
 function ArtPostsContainer() {
 
@@ -36,6 +37,12 @@ function ArtPostsContainer() {
                 const routeId = parseInt(routeInfo.match.params.id)
                 const artPost = artPosts.find(art => art.id === routeId)
                 return <ArtPostCard key={artPost.id} artPost={artPost}/>
+            }}/>
+
+            <Route exact path="/art_posts/:id/edit" component={(routeInfo) => {
+                const routeId = parseInt(routeInfo.match.params.id)
+                const artPost = artPosts.find(art => art.id === routeId)
+                return <ArtPostEditForm artPost={artPost}/>
             }}/>
                 
             <Route path="*" render={() => <h1>ROUTE DOES NOT EXIST</h1>}/>

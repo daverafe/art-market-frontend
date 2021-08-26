@@ -15,6 +15,19 @@ const manageArt = (state = {
                 art_posts: [...state.art_posts, action.payload]
             }
 
+        case "UPDATE_ART_POST":
+            const artPost = state.art_posts.find(art => art.id === action.payload.id)
+            return {
+                ...state,
+                art_posts: state.art_posts.map(art => {
+                    if(art !== artPost){
+                        return art 
+                    } else {
+                        return action.payload 
+                    }
+                })
+            }
+
         case "DELETE_ART_POST":
             return {
                 ...state,

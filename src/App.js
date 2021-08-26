@@ -6,9 +6,9 @@ import {BrowserRouter as Router,
 } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
-import ArtPostsContainer from './components/ArtPostsContainer';
-import UserSignupForm from './components/UserSignupForm';
-import Cart from './components/Cart'
+import ArtPostsContainer from './components/artPostComponents/ArtPostsContainer';
+import UserSignupForm from './components/userComponents/UserSignupForm';
+import Cart from './components/cartComponents/Cart'
 import HomePage from './components/HomePage';
 import {fetchArt} from './actions/artActions'
 import {fetchUsers} from './actions/userActions'

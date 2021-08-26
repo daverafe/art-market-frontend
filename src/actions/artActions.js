@@ -25,6 +25,23 @@ export const addArtPost = (art_post) => {
     }
 }
 
+export const updateArtPost = (art_post, artPostId) => { 
+    return (dispatch) => {
+        fetch(`http://127.0.0.1:3000/art_posts/${artPostId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify({art_post})
+        })
+        .then(resp => resp.json())
+        .then(art_post => {
+            dispatch({type: "UPDATE_ART_POST", payload: art_post})
+        })
+    }
+}
+
 export const deleteArtPost = (art_post) => {
     return (dispatch) => {
         fetch(`http://127.0.0.1:3000/art_posts/${art_post.id}`, {

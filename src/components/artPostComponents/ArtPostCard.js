@@ -12,6 +12,7 @@ function ArtPostCard({artPost}) {
         dispatch(addToCart(artPost))
     }
 
+    
     const handleDelete = (artPost) => {
         dispatch(deleteArtPost(artPost))
     }
@@ -24,6 +25,9 @@ function ArtPostCard({artPost}) {
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
             <button onClick={() => handleAddToCart(artPost)}>Add To Cart</button>
+            <Link to={`/art_posts/${artPost.id}/edit`}>
+                <button>Edit Post</button>
+            </Link>
             <button onClick={() => handleDelete(artPost)}>Delete</button>
         </div>
     )

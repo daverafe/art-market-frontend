@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {removeFromCart} from '../actions/artActions'
+import {removeFromCart} from '../../actions/artActions'
 
 function CartPostCard({artPost}) {
     const dispatch = useDispatch()
