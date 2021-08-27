@@ -31,7 +31,7 @@ const manageArt = (state = {
         case "DELETE_ART_POST":
             return {
                 ...state,
-                art_posts: state.art_posts.filter(art => art.id !== action.payload.id)
+                art_posts: state.art_posts.filter(art => art.id !== action.payload)
             }
 
         case "ADD_TO_CART":

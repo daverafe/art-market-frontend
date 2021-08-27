@@ -53,7 +53,10 @@ export const deleteArtPost = (artPostId) => {
         })
         .then(resp => resp.json())
         .then(art_post => {
-            dispatch({type: "DELETE_ART_POST", payload: art_post})
+            dispatch({type: "DELETE_ART_POST", payload: artPostId})
+            setTimeout(function(){
+                alert(art_post.message)
+            }, 100)
         })
     }
 }
