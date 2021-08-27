@@ -8,7 +8,7 @@ export const fetchArt = () => {
     }
 }
 
-export const addArtPost = (art_post) => {
+export const addArtPost = (art_post, blob) => {
     return (dispatch) => {
         fetch('http://127.0.0.1:3000/art_posts', {
             method: "POST",
@@ -16,7 +16,7 @@ export const addArtPost = (art_post) => {
                 "Content-Type": "application/json",
                 "Accepts": "application/json"
             },
-            body: JSON.stringify({art_post})
+            body: JSON.stringify({art_post}, {image: blob.signed_id})
         })
         .then(resp => resp.json())
         .then(art_post => {
@@ -42,10 +42,14 @@ export const updateArtPost = (art_post, artPostId) => {
     }
 }
 
-export const deleteArtPost = (art_post) => {
+export const deleteArtPost = (artPostId) => {
     return (dispatch) => {
-        fetch(`http://127.0.0.1:3000/art_posts/${art_post.id}`, {
-            method: "DELETE",
+        fetch(`http://127.0.0.1:3000/art_posts/${artPostId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                "Accepts": "application/json"
+            }
         })
         .then(resp => resp.json())
         .then(art_post => {

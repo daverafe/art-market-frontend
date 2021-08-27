@@ -13,8 +13,8 @@ function ArtPostCard({artPost}) {
     }
 
     
-    const handleDelete = (artPost) => {
-        dispatch(deleteArtPost(artPost))
+    const handleDelete = (artPostId) => {
+        dispatch(deleteArtPost(artPostId))
     }
 
     return (
@@ -28,7 +28,7 @@ function ArtPostCard({artPost}) {
             <Link to={`/art_posts/${artPost.id}/edit`}>
                 <button>Edit Post</button>
             </Link>
-            <button onClick={() => handleDelete(artPost)}>Delete</button>
+            <button onClick={() => handleDelete(artPost.id)}>Delete</button>
         </div>
     )
 }
