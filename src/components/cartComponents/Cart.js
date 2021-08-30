@@ -4,7 +4,8 @@ import CartPostCard from './CartPostCard'
 
 function Cart() {
 
-    const artInCart = useSelector(state => state.cart)
+    const artInCart = useSelector(state => state.art.cart)
+        
 
     return (
         <div id="cart">
