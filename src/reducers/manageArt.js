@@ -12,7 +12,7 @@ const manageArt = (state = {
         case "ADD_ART_POST":
             return {
                 ...state,
-                art_posts: [...state.art_posts, action.payload]
+                art_posts: [...state.art_posts, {...action.payload.art_post, image_url: action.payload.image_url}]
             }
 
         case "UPDATE_ART_POST":
