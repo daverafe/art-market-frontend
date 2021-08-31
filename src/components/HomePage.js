@@ -9,9 +9,12 @@ function HomePage() {
             <Link to="/art_posts">
                 <button id="home-bttn-art">Art</button>
             </Link>
-            <p>Sign up to sell:</p>
+            <p>Sign up or Login to sell:</p>
             <Link to="/signup">
                 <button id="home-bttn-signup">Sign Up</button>
+            </Link>
+            <Link to="/login">
+                <button id="home-bttn-login">Login</button>
             </Link>
         </div>
     )

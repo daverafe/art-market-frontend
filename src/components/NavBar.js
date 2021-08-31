@@ -18,12 +18,13 @@ function NavBar() {
             {currentUser ? 
                 <Link to="/art_posts/new">
                     <button id="nav-sign-up">Create Art Post</button>
-                </Link> :
-                <Link to="/signup">
-                    <button id="nav-sign-up">Sign Up</button>
-                </Link>
-            }
-        
+                </Link> : null}
+            <Link to="/signup">
+                <button id="nav-sign-up">Sign Up</button>
+            </Link> 
+            <Link to="/login">
+                <button id="nav-login">Login</button>
+            </Link>
             <Link to="/cart">
                 <button id="nav-cart">Cart</button>
             </Link>

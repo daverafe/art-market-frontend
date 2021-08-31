@@ -24,3 +24,20 @@ export const addUser = (user) => {
         })
     }
 }
+
+export const loginUser = (user) => {
+    return (dispatch) => {
+        fetch('http://127.0.0.1:3000/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accepts": "application/json"
+            },
+            body: JSON.stringify({user})
+        })
+        .then(resp => resp.json())
+        .then(user => {
+            dispatch({type: "LOGIN_USER", payload: user})
+        })
+    }
+}

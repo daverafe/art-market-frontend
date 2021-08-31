@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import NavBar from './components/NavBar';
 import ArtPostsContainer from './components/artPostComponents/ArtPostsContainer';
 import UserSignupForm from './components/userComponents/UserSignupForm';
+import UserLoginForm from './components/userComponents/UserLoginForm';
 import Cart from './components/cartComponents/Cart'
 import HomePage from './components/HomePage';
 import {fetchArt} from './actions/artActions'
@@ -36,7 +37,9 @@ useEffect(() => {
         {artPosts.length > 0 ? <Route path="/art_posts" component={ArtPostsContainer}/> : <h1>LOADING</h1>}
        
         <Route exact path="/signup" component={UserSignupForm}/>
-         
+        
+        <Route exact path="/login" component={UserLoginForm}/>
+                 
         <Route exact path="/cart" component={Cart}/>
          
         <Route path="*" render={() => <h1>ROUTE DOES NOT EXIST</h1>}/>
