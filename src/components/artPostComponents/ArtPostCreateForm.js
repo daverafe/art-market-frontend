@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import { addArtPost } from '../../actions/artActions'
 import { DirectUpload } from 'activestorage';
+import {Button} from 'react-bootstrap'
 
 function ArtPostCreateForm() {
 
@@ -64,7 +65,7 @@ function ArtPostCreateForm() {
                 <br/>
                 <label>Description:</label>
                 <input type="text" name="description" value={artValues.description} onChange={(event) => handleChange(event)}/>
-                <input type="submit" value="Create" />
+                <Button type="submit" variant="primary">Create</Button>
             </form>
         </div>
     )

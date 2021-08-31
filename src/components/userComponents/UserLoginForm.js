@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {loginUser} from '../../actions/userActions'
+import {Button} from 'react-bootstrap'
 
 function UserLoginForm() {
 
@@ -31,7 +32,7 @@ function UserLoginForm() {
             <form onSubmit={(event) => handleSubmit(event)}>
                 <input type="email" placeholder="Email" name="email" value={userValues.email} onChange={(event) => handleChange(event)}/>
                 <input type="password" placeholder="Password" name="password" value={userValues.password} onChange={(event) => handleChange(event)}/>
-                <input type="submit" value="Login"/>
+                <Button type="submit" variant="primary">Login</Button>
             </form>
         </div>
     )
