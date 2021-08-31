@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {updateArtPost} from '../../actions/artActions'
+import {Button} from 'react-bootstrap'
 
 function ArtPostEditForm({artPost}) {
     
@@ -35,7 +36,7 @@ function ArtPostEditForm({artPost}) {
             <input type="text" name="title" value={artValues.title} placeholder="Title" onChange={(event) => handleChange(event)}/>
             <input type="number" name="price" value={artValues.price} placeholder="Price" onChange={(event) => handleChange(event)}/>
             <input type="text" name="description" value={artValues.description} placeholder="Description" onChange={(event) => handleChange(event)}/>
-            <input type="submit" value="Edit" />
+            <Button type="submit" variant="primary">Edit</Button>
         </form>
     </div>
     )

@@ -1,7 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 import {addToCart} from '../../actions/artActions'
-import {deleteArtPost} from '../../actions/artActions'
 import {Link} from 'react-router-dom'
 import {Card, Button, Col} from 'react-bootstrap'
 
@@ -13,10 +12,6 @@ function ArtPostCard({artPost}) {
         dispatch(addToCart(artPost))
     }
 
-    
-    const handleDelete = (artPostId) => {
-        dispatch(deleteArtPost(artPostId))
-    }
 
     return (
         <>
@@ -27,17 +22,7 @@ function ArtPostCard({artPost}) {
                         <Link to={`/art_posts/${artPost.id}`}>
                             <Card.Title>{artPost.title}</Card.Title>
                         </Link>
-                            <Card.Text>
-                                ${artPost.price}
-                            </Card.Text>
-                            <Card.Text>
-                                {artPost.description}
-                            </Card.Text>
                             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
-                            <Link to={`/art_posts/${artPost.id}/edit`}>
-                                <Button variant="info">Edit Post</Button>
-                            </Link>
-                            <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button>
                         </Card.Body>
                     </Card>
                 </Col>

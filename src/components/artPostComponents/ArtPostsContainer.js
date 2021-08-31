@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ArtPostCard from './ArtPostCard'
 import ArtPostSearchForm from './ArtPostSearchForm'
 import ArtPostCreateForm from './ArtPostCreateForm'
+import ArtPostShow from './ArtPostShow'
 import {useSelector} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 import ArtPostEditForm from './ArtPostEditForm'
@@ -41,7 +42,7 @@ function ArtPostsContainer() {
             <Route exact path="/art_posts/:id" component={(routeInfo) => {
                 const routeId = parseInt(routeInfo.match.params.id)
                 const artPost = artPosts.find(art => art.id === routeId)
-                return <ArtPostCard key={artPost.id} artPost={artPost}/>
+                return <ArtPostShow key={artPost.id} artPost={artPost} routeInfo={routeInfo}/>
             }}/>
 
             <Route exact path="/art_posts/:id/edit" component={(routeInfo) => {

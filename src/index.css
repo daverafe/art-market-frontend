@@ -35,6 +35,11 @@ h1 {
   font-weight: bold; 
 }
 
+#show p {
+  color: white;
+  font-weight: bold; 
+}
+
 label {
   color: white;
 }
