@@ -1,6 +1,8 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 import {removeFromCart} from '../../actions/artActions'
+import {Col, Card, Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 function CartPostCard({artPost}) {
     const dispatch = useDispatch()
@@ -10,13 +12,28 @@ function CartPostCard({artPost}) {
     }
     
     return (
-        <div className="art-post-card">
-            <h2>{artPost.title}</h2>
-            <p>${artPost.price}</p>
-            <p>{artPost.description}</p>
-            <button onClick={() => handleClick(artPost)}>Remove From Cart</button>
-        </div>
+        <>
+            <Col>
+                <Card style={{ width: '18rem' }} className="card">
+                    <Card.Img variant="top" src="holder.js/100px180" />
+                    <Card.Body>
+                    <Link to={`/art_posts/${artPost.id}`}>
+                        <Card.Title>{artPost.title}</Card.Title>
+                    </Link>
+                        <Card.Text>
+                            ${artPost.price}
+                        </Card.Text>
+                        <Card.Text>
+                            {artPost.description}
+                        </Card.Text>
+                        <Button variant="dark" onClick={() => handleClick(artPost)}>Remove From Cart</Button>
+                    </Card.Body>
+                </Card>
+            </Col>
+        </>
     )
 }
 
 export default CartPostCard
+
+
