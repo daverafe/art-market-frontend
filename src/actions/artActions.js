@@ -16,7 +16,7 @@ export const addArtPost = (art_post, blob) => {
                 "Content-Type": "application/json",
                 "Accepts": "application/json"
             },
-            body: JSON.stringify({...art_post, image: blob})
+            body: JSON.stringify({...art_post, image: blob.signed_id})
         })
         .then(resp => resp.json())
         .then(art_post => {
