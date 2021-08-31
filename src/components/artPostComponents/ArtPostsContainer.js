@@ -5,6 +5,7 @@ import ArtPostCreateForm from './ArtPostCreateForm'
 import {useSelector} from 'react-redux'
 import {Route, Switch} from 'react-router-dom'
 import ArtPostEditForm from './ArtPostEditForm'
+import {Container, Row} from 'react-bootstrap'
 
 function ArtPostsContainer() {
 
@@ -26,9 +27,13 @@ function ArtPostsContainer() {
         <Switch>
             <Route exact path="/art_posts">
                 <ArtPostSearchForm handleChange={handleChange}/>
-                {filteredArtPosts.map(artPost => {
-                return <ArtPostCard key={artPost.id} artPost={artPost}/>
-                })}
+                <Container>
+                    <Row>
+                        {filteredArtPosts.map(artPost => {
+                        return <ArtPostCard key={artPost.id} artPost={artPost}/>
+                        })}
+                    </Row>
+                </Container>
             </Route>
 
             <Route exact path="/art_posts/new" component={ArtPostCreateForm}/>

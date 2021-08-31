@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import {addToCart} from '../../actions/artActions'
 import {deleteArtPost} from '../../actions/artActions'
 import {Link} from 'react-router-dom'
+import {Card, Button, Col} from 'react-bootstrap'
 
 function ArtPostCard({artPost}) {
 
@@ -18,19 +19,31 @@ function ArtPostCard({artPost}) {
     }
 
     return (
-        <div className="art-post-card">
-            <Link to={`/art_posts/${artPost.id}`}>
-                <h2>{artPost.title}</h2>
-            </Link>
-            <p>${artPost.price}</p>
-            <p>{artPost.description}</p>
-            <button onClick={() => handleAddToCart(artPost)}>Add To Cart</button>
-            <Link to={`/art_posts/${artPost.id}/edit`}>
-                <button>Edit Post</button>
-            </Link>
-            <button onClick={() => handleDelete(artPost.id)}>Delete</button>
-        </div>
+        <>
+                <Col>
+                    <Card style={{ width: '18rem' }} className="card">
+                        <Card.Img variant="top" src="holder.js/100px180" />
+                        <Card.Body>
+                        <Link to={`/art_posts/${artPost.id}`}>
+                            <Card.Title>{artPost.title}</Card.Title>
+                        </Link>
+                            <Card.Text>
+                                ${artPost.price}
+                            </Card.Text>
+                            <Card.Text>
+                                {artPost.description}
+                            </Card.Text>
+                            <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
+                            <Link to={`/art_posts/${artPost.id}/edit`}>
+                                <Button variant="info">Edit Post</Button>
+                            </Link>
+                            <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+        </>
     )
 }
 
 export default ArtPostCard
+

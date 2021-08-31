@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#art-post-search-form {
+  margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
