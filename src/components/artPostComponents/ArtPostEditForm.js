@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {updateArtPost} from '../../actions/artActions'
 import {Button} from 'react-bootstrap'
 
-function ArtPostEditForm({artPost}) {
+function ArtPostEditForm({artPost, routeInfo}) {
     
     const dispatch = useDispatch()
     const [artValues, setArtValues] = useState({
@@ -25,6 +25,7 @@ function ArtPostEditForm({artPost}) {
             price: 0,
             description: ''
         })
+        routeInfo.history.push('/art_posts')
     }
     
     

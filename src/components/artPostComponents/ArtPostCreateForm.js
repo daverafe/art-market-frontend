@@ -4,7 +4,7 @@ import { addArtPost } from '../../actions/artActions'
 import { DirectUpload } from 'activestorage';
 import {Button} from 'react-bootstrap'
 
-function ArtPostCreateForm() {
+function ArtPostCreateForm(props) {
 
     const dispatch = useDispatch()
     const [artValues, setArtValues] = useState({
@@ -45,6 +45,7 @@ function ArtPostCreateForm() {
             description: '',
             user_id: 1
         })
+        props.history.push('/art_posts')
     }
     
     return (

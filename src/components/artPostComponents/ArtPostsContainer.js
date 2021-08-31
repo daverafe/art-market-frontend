@@ -48,7 +48,7 @@ function ArtPostsContainer() {
             <Route exact path="/art_posts/:id/edit" component={(routeInfo) => {
                 const routeId = parseInt(routeInfo.match.params.id)
                 const artPost = artPosts.find(art => art.id === routeId)
-                return <ArtPostEditForm artPost={artPost}/>
+                return <ArtPostEditForm artPost={artPost} routeInfo={routeInfo}/>
             }}/>
                 
             <Route path="*" render={() => <h1>ROUTE DOES NOT EXIST</h1>}/>

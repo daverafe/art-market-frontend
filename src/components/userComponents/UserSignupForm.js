@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {addUser} from '../../actions/userActions'
 import {Button} from 'react-bootstrap'
 
-function UserSignupForm() {
+function UserSignupForm(props) {
 
     const [userValues, setUserValues] = useState({
         email: '',
@@ -23,6 +23,7 @@ function UserSignupForm() {
             email: '',
             password: ''
         })
+        props.history.push('/art_posts')
     }
     
     
