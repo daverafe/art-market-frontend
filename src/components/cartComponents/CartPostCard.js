@@ -15,16 +15,13 @@ function CartPostCard({artPost}) {
         <>
             <Col>
                 <Card style={{ width: '18rem' }} className="card">
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
                     <Link to={`/art_posts/${artPost.id}`}>
-                        <Card.Title>{artPost.title}</Card.Title>
+                        <Card.Img variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
                     </Link>
+                    <Card.Body>
+                        <Card.Title>{artPost.title}</Card.Title>
                         <Card.Text>
                             ${artPost.price}
-                        </Card.Text>
-                        <Card.Text>
-                            {artPost.description}
                         </Card.Text>
                         <Button variant="dark" onClick={() => handleClick(artPost)}>Remove From Cart</Button>
                     </Card.Body>
