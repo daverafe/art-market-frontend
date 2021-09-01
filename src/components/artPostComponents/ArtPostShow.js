@@ -22,7 +22,7 @@ function ArtPostShow({artPost, routeInfo}) {
     return (
         <div id="show">
             <h1>{artPost.title}</h1>
-            <img id="show-img" alt="art" src={`http://127.0.0.1:3000${artPost.image_url}`}/>
+            <img id="show-img" alt="art" src={`http://127.0.0.1:3000${artPost.url}`}/>
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
