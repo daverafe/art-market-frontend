@@ -12,16 +12,15 @@ function ArtPostCard({artPost}) {
         dispatch(addToCart(artPost))
     }
 
-
     return (
         <>
                 <Col>
                     <Card style={{ width: '18rem' }} className="card">
-                        <Card.Img variant="top" src="holder.js/100px180" />
-                        <Card.Body>
                         <Link to={`/art_posts/${artPost.id}`}>
-                            <Card.Title>{artPost.title}</Card.Title>
+                            <Card.Img variant="top" src={`http://127.0.0.1:3000${artPost.image_url}`} />
                         </Link>
+                        <Card.Body>
+                            <Card.Title>{artPost.title}</Card.Title>
                             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
                         </Card.Body>
                     </Card>
