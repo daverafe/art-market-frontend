@@ -56,3 +56,62 @@ label {
   font-size: 15px;
 }
 
+#input-text {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-file {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-price {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-description {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-bttns {
+  width: 30%;
+}
+
+#input-email-log {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-email-sign {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-password-sign {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-password-log {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

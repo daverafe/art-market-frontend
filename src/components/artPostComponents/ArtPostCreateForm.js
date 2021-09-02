@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { addArtPost } from '../../actions/artActions'
 import { DirectUpload } from 'activestorage';
-import {Button} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 
 function ArtPostCreateForm(props) {
 
@@ -15,7 +15,7 @@ function ArtPostCreateForm(props) {
         image: '',
         price: '',
         description: '',
-        user_id: currentUser.user.id 
+        user_id: currentUser ? currentUser.user.id : null 
     })
     
     const handleChange = (event) => {
@@ -54,25 +54,23 @@ function ArtPostCreateForm(props) {
     return (
         <div id="art-post-create-form">
             <h1>Create A New Art Post</h1>
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <label>Title:</label>
-                <input type="text" name="title" value={artValues.title} onChange={(event) => handleChange(event)}/>
+            <Form onSubmit={(event) => handleSubmit(event)}>
+                <Form.Label>Title:</Form.Label>
+                <Form.Control id="input-text" type="text" name="title" value={artValues.title} onChange={(event) => handleChange(event)}/>
                 <br/>
+                <Form.Label>Upload Image:</Form.Label>
+                <Form.Control id="input-file" type="file" name="image" onChange={(event) => handleFile(event)}/>
                 <br/>
-                <label>Image:</label>
-                <input type="file" name="image" onChange={(event) => handleFile(event)}/>
+                <Form.Label>Price:</Form.Label>
+                <Form.Control id="input-price" type="number" name="price" value={artValues.price} onChange={(event) => handleChange(event)}/>
                 <br/>
-                <br/>
-                <label>Price:</label>
-                <input type="number" name="price" value={artValues.price} onChange={(event) => handleChange(event)}/>
-                <br/>
-                <br/>
-                <label>Description:</label>
-                <input type="text" name="description" value={artValues.description} onChange={(event) => handleChange(event)}/>
-                <Button type="submit" variant="primary">Create</Button>
-            </form>
+                <Form.Label>Description:</Form.Label>
+                <Form.Control id="input-description" type="text" name="description" value={artValues.description} onChange={(event) => handleChange(event)}/>
+                <Button className="form-bttns" type="submit" variant="primary">Create</Button>
+            </Form>
         </div>
     )
 }
 
 export default ArtPostCreateForm
+

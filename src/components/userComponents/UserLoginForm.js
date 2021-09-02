@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {loginUser} from '../../actions/userActions'
-import {Button} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 
 function UserLoginForm(props) {
 
@@ -30,11 +30,12 @@ function UserLoginForm(props) {
     return (
         <div id="user-login-form">
             <h1>Login To Sell</h1>
-            <form onSubmit={(event) => handleSubmit(event)}>
-                <input type="email" placeholder="Email" name="email" value={userValues.email} onChange={(event) => handleChange(event)}/>
-                <input type="password" placeholder="Password" name="password" value={userValues.password} onChange={(event) => handleChange(event)}/>
-                <Button type="submit" variant="primary">Login</Button>
-            </form>
+            <Form onSubmit={(event) => handleSubmit(event)}>
+                <Form.Control id="input-email-log" type="email" placeholder="Email" name="email" value={userValues.email} onChange={(event) => handleChange(event)}/>
+                <br/>
+                <Form.Control id="input-password-log" type="password" placeholder="Password" name="password" value={userValues.password} onChange={(event) => handleChange(event)}/>
+                <Button className="form-bttns" type="submit" variant="primary">Login</Button>
+            </Form>
         </div>
     )
 }
