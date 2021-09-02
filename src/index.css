@@ -49,6 +49,11 @@ label {
   width: 400px;
 }
 
+#card-img {
+  height: 200px;
+  width: 285px;
+}
+
 #cart-icon {
   margin-left: 5px;
   color: white;
