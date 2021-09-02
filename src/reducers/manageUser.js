@@ -3,10 +3,18 @@ const manageUser = (state = {
 }, action) => {
     switch(action.type){
         case "GET_USERS":
-            return {users: action.payload}
+            const userLogin = localStorage.getItem('userLogin')
+            const userId = parseInt(localStorage.getItem('userId'))
+            return {users: action.payload.map(user => {
+                if(user.id === userId){
+                    return {user, userLogin: userLogin}
+                } else {
+                    return user 
+                }
+            })}
         
         case "ADD_USER":
-            return {users: [...state.users, {...action.payload.user, jwt: action.payload.jwt}]}
+            return {users: [...state.users, {...action.payload.user, userLogin: userLogin}]}
         
         case "LOGIN_USER":
             const loginUser = state.users.find(user => user.id === action.payload.user.id)
@@ -14,7 +22,8 @@ const manageUser = (state = {
                 if(user !== loginUser){
                     return user 
                 } else {
-                    return {...action.payload.user, jwt: action.payload.jwt}
+                    const userLogin = localStorage.getItem('userLogin')
+                    return {...action.payload.user, userLogin: userLogin}
                 }
             })}
         default:
