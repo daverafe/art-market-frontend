@@ -8,7 +8,7 @@ function Cart() {
     const artInCart = useSelector(state => state.art.cart)
         
     return (
-        <div id="cart">
+        <div id="cart-container">
             <h1>Cart</h1>
             <Container>
                 <Row>

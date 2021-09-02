@@ -10,6 +10,8 @@ function NavBar() {
     const users = useSelector(state => state.users.users)
     const currentUser = users.find(user => user.userLogin)
 
+    const artInCart = useSelector(state => state.art.cart)
+
     const handleClick = () => {
         localStorage.setItem('userLogin', '')
         localStorage.setItem('userId', '')
@@ -27,7 +29,7 @@ function NavBar() {
                         <Nav.Link as={Link} to="/art_posts/new">Create Art Post</Nav.Link> : null}
                     <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                    <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
+                    <Nav.Link as={Link} to="/cart">Cart{artInCart.length > 0 ? <span id="cart-icon">{artInCart.length}</span> : null}</Nav.Link>
                     {currentUser ? 
                         <Button variant="dark" onClick={() => handleClick()}>Logout</Button> : null}
                 </Nav>

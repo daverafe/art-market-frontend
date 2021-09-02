@@ -49,3 +49,10 @@ label {
   width: 400px;
 }
 
+#cart-icon {
+  margin-left: 5px;
+  color: white;
+  border: 1px solid white;
+  font-size: 15px;
+}
+

@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { addArtPost } from '../../actions/artActions'
 import { DirectUpload } from 'activestorage';
 import {Button} from 'react-bootstrap'
 
 function ArtPostCreateForm(props) {
+
+    const users = useSelector(state => state.users.users)
+    const currentUser = users.find(user => user.userLogin)
 
     const dispatch = useDispatch()
     const [artValues, setArtValues] = useState({
@@ -12,7 +15,7 @@ function ArtPostCreateForm(props) {
         image: '',
         price: '',
         description: '',
-        user_id: 1 
+        user_id: currentUser.user.id 
     })
     
     const handleChange = (event) => {
@@ -43,7 +46,7 @@ function ArtPostCreateForm(props) {
             image: '',
             price: '',
             description: '',
-            user_id: 1
+            user_id: currentUser.user.id 
         })
         props.history.push('/art_posts')
     }
