@@ -27,8 +27,10 @@ function NavBar() {
                     <Nav.Link as={Link} to="/art_posts">Art</Nav.Link>
                     {currentUser ? 
                         <Nav.Link as={Link} to="/art_posts/new">Create Art Post</Nav.Link> : null}
-                    <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
-                    <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                    {!currentUser ? 
+                        <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link> : null}
+                    {!currentUser ? 
+                        <Nav.Link as={Link} to="/login">Login</Nav.Link> : null}
                     <Nav.Link as={Link} to="/cart">Cart{artInCart.length > 0 ? <span id="cart-icon">{artInCart.length}</span> : null}</Nav.Link>
                     {currentUser ? 
                         <Button variant="dark" onClick={() => handleClick()}>Logout</Button> : null}
