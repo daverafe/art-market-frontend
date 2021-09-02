@@ -2,10 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.\
@@ -14,30 +10,50 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+# Art Market Front End
+This is the React.js front end to the Art Market App. This is a SPA powered by React and utilizing Redux for state management.   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installing / Getting started
 
-### `yarn build`
+You'll need to run a few commands in your terminal to get this up and running
+```shell
+git clone https://github.com/daverafe/art-market-frontend.git
+cd art-market-frontend
+yarn start 
+```
+You will need to follow these steps in order to open the app in your browser. You will need to also have the API server running in order to get the data from the back end. This can be found at: https://github.com/daverafe/art_market_api
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Developing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project was built with Javascript(ES6), React, Redux, and CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+git clone https://github.com/daverafe/art-market-frontend.git
+cd art-market-frontend
+code .
+```
 
-### `yarn eject`
+This is going to give you access to the repository, and open the project in your VS code. 
+Again back end is in seperate respository at https://github.com/daverafe/art_market_api.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+In this project users can browse various pieces of art independent sellers have posted to sell. Users can browse and add to cart without and signup or login required. If a user is interested in selling their own art they can sign up, create an account, and post the art they would like to sell. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
+
+If you'd like to contribute, please fork the repository and use a feature
+branch. Pull requests are warmly welcome.
+
+## Links
+
+- Repository: https://github.com/daverafe/art-market-frontend
+
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ## Learn More
 
@@ -45,26 +61,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
