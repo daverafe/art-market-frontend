@@ -21,7 +21,7 @@ export const addUser = (user) => {
         .then(resp => resp.json())
         .then(user => {
             localStorage.setItem('userLogin', user.jwt)
-            localStorage.setItem('userId', user.user.id) 
+            localStorage.setItem('userId', user.user.id)
             dispatch({type: "ADD_USER", payload: user})
         })
     }

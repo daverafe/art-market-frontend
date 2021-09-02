@@ -14,7 +14,13 @@ const manageUser = (state = {
             })}
         
         case "ADD_USER":
-            return {users: [...state.users, {...action.payload.user, userLogin: userLogin}]}
+            const user = action.payload.user
+            if(user){
+                const userLogin = localStorage.getItem('userLogin')
+                return {users: [...state.users, {...user, userLogin: userLogin}]}
+            } else {
+                return state 
+            }
         
         case "LOGIN_USER":
             const loginUser = state.users.find(user => user.id === action.payload.user.id)
