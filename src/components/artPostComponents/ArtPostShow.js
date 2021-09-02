@@ -1,13 +1,16 @@
 import React from 'react'
 import {Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {addToCart} from '../../actions/artActions'
 import {deleteArtPost} from '../../actions/artActions'
 
 function ArtPostShow({artPost, routeInfo}) {
 
     const dispatch = useDispatch()
+
+    const users = useSelector(state => state.users.users)
+    const currentUser = users.find(user => user.userLogin)
 
     const handleAddToCart = (artPost) => {
         dispatch(addToCart(artPost))
@@ -26,10 +29,12 @@ function ArtPostShow({artPost, routeInfo}) {
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
-            <Link to={`/art_posts/${artPost.id}/edit`}>
-                <Button variant="info">Edit Post</Button>
-            </Link>
-            <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button>
+            { currentUser && currentUser.user.id === artPost.user_id ? 
+                <Link to={`/art_posts/${artPost.id}/edit`}>
+                    <Button variant="info">Edit Post</Button>
+                </Link> : null}
+            { currentUser && currentUser.user.id === artPost.user_id ? 
+                <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button> : null}
         </div>
     )
 }
