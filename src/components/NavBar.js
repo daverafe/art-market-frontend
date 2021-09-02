@@ -12,6 +12,7 @@ function NavBar() {
 
     const handleClick = () => {
         localStorage.setItem('userLogin', '')
+        localStorage.setItem('userId', '')
         dispatch(fetchUsers())
     }
     
@@ -27,7 +28,8 @@ function NavBar() {
                     <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
                     <Nav.Link as={Link} to="/login">Login</Nav.Link>
                     <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
-                    <Button variant="dark" onClick={() => handleClick()}>Logout</Button>
+                    {currentUser ? 
+                        <Button variant="dark" onClick={() => handleClick()}>Logout</Button> : null}
                 </Nav>
                 </Container>
             </Navbar>
