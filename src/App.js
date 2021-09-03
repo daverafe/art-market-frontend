@@ -21,11 +21,11 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchArt())
-}, [])
+}, [dispatch])
 
 useEffect(() => {
   dispatch(fetchUsers())
-}, [])
+}, [dispatch])
 
   return (
     <Router>
