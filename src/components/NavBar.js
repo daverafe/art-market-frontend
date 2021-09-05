@@ -33,7 +33,7 @@ function NavBar() {
                         <Nav.Link as={Link} to="/login">Login</Nav.Link> : null}
                     <Nav.Link as={Link} to="/cart">Cart{artInCart.length > 0 ? <span id="cart-icon">{artInCart.length}</span> : null}</Nav.Link>
                     {currentUser ? 
-                        <Button variant="dark" onClick={() => handleClick()}>Logout</Button> : null}
+                        <Nav.Link as={Link} to="/art_posts" onClick={() => handleClick()}>Logout</Nav.Link>: null}
                 </Nav>
                 </Container>
             </Navbar>

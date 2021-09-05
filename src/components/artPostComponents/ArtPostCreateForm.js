@@ -15,7 +15,7 @@ function ArtPostCreateForm(props) {
         image: '',
         price: '',
         description: '',
-        user_id: currentUser ? currentUser.user.id : null 
+        user_id: currentUser ? currentUser.id : null 
     })
     
     const handleChange = (event) => {

@@ -29,7 +29,7 @@ function ArtPostShow({artPost, routeInfo}) {
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
-            { currentUser && currentUser.user.id === artPost.user_id ? 
+            { currentUser && currentUser.id === artPost.user_id ? 
                 <Link to={`/art_posts/${artPost.id}/edit`}>
                     <Button variant="info">Edit Post</Button>
                 </Link> : null}

@@ -7,7 +7,7 @@ const manageUser = (state = {
             const userId = parseInt(localStorage.getItem('userId'))
             return {users: action.payload.map(user => {
                 if(user.id === userId){
-                    return {user, userLogin: userLogin}
+                    return {...user, userLogin: userLogin}
                 } else {
                     return user 
                 }
