@@ -33,7 +33,7 @@ function ArtPostShow({artPost, routeInfo}) {
                 <Link to={`/art_posts/${artPost.id}/edit`}>
                     <Button variant="info">Edit Post</Button>
                 </Link> : null}
-            { currentUser && currentUser.user.id === artPost.user_id ? 
+            { currentUser && currentUser.id === artPost.user_id ? 
                 <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button> : null}
         </div>
     )

@@ -46,7 +46,7 @@ function ArtPostCreateForm(props) {
             image: '',
             price: '',
             description: '',
-            user_id: currentUser.user.id 
+            user_id: currentUser.id 
         })
         props.history.push('/art_posts')
     }

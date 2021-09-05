@@ -17,7 +17,7 @@ function ArtPostCard({artPost}) {
                 <Col>
                     <Card style={{ width: '18rem' }} className="card">
                         <Link to={`/art_posts/${artPost.id}`}>
-                            <Card.Img id="card-img" variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
+                            <Card.Img className="card-img" variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
                         </Link>
                         <Card.Body>
                             <Card.Title>{artPost.title}</Card.Title>
