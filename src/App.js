@@ -34,7 +34,8 @@ useEffect(() => {
       <Switch>
         <Route exact path="/" component={HomePage}/>
         
-        {artPosts.length > 0 ? <Route path="/art_posts" component={ArtPostsContainer}/> : <Route path="/art_posts" render={() => <h1>LOADING</h1>}/>}
+        <Route path="/art_posts" component={ArtPostsContainer}/>
+        {/* {artPosts.length > 0 ? <Route path="/art_posts" component={ArtPostsContainer}/> : <Route path="/art_posts" render={() => <h1>LOADING</h1>}/>} */}
        
         <Route exact path="/signup" component={UserSignupForm}/>
         
