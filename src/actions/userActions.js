@@ -39,9 +39,13 @@ export const loginUser = (user) => {
         })
         .then(resp => resp.json())
         .then(user => {
-            localStorage.setItem('userLogin', user.jwt)
-            localStorage.setItem('userId', user.user.id) 
-            dispatch({type: "LOGIN_USER", payload: user})
+            if(user.message){
+                alert(user.message)
+            } else {
+                localStorage.setItem('userLogin', user.jwt)
+                localStorage.setItem('userId', user.user.id) 
+                dispatch({type: "LOGIN_USER", payload: user})
+            }
         })
     }
 }
