@@ -1,6 +1,6 @@
 export const fetchUsers = () => {
     return (dispatch) => {
-        fetch('http://127.0.0.1:3000/users')
+        fetch('https://hidden-thicket-87615.herokuapp.com/users')
         .then(resp => resp.json())
         .then(users => {
             dispatch({type: "GET_USERS", payload: users})
@@ -10,7 +10,7 @@ export const fetchUsers = () => {
 
 export const addUser = (user) => {
     return (dispatch) => {
-        fetch('http://127.0.0.1:3000/users', {
+        fetch('https://hidden-thicket-87615.herokuapp.com/users', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const addUser = (user) => {
 
 export const loginUser = (user) => {
     return (dispatch) => {
-        fetch('http://127.0.0.1:3000/login', {
+        fetch('https://hidden-thicket-87615.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

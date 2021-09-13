@@ -14,17 +14,17 @@ function ArtPostCard({artPost}) {
 
     return (
         <>
-                <Col>
-                    <Card style={{ width: '18rem' }} className="card">
-                        <Link to={`/art_posts/${artPost.id}`}>
-                            <Card.Img className="card-img" variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
-                        </Link>
-                        <Card.Body>
-                            <Card.Title>{artPost.title}</Card.Title>
-                            <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
+            <Col>
+                <Card style={{ width: '18rem' }} className="card">
+                    <Link to={`/art_posts/${artPost.id}`}>
+                        <Card.Img className="card-img" variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
+                    </Link>
+                    <Card.Body>
+                        <Card.Title>{artPost.title}</Card.Title>
+                        <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
+                    </Card.Body>
+                </Card>
+            </Col>
         </>
     )
 }

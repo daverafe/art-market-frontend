@@ -28,7 +28,7 @@ function ArtPostCreateForm(props) {
     }
 
     const uploadFile = (artValues) => {
-        const upload = new DirectUpload(artValues.image, 'http://127.0.0.1:3000/rails/active_storage/direct_uploads')
+        const upload = new DirectUpload(artValues.image, 'https://hidden-thicket-87615.herokuapp.com/rails/active_storage/direct_uploads')
         upload.create((error, blob) => {
             if(error) {
                 console.log(error)
