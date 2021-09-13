@@ -16,7 +16,7 @@ function CartPostCard({artPost}) {
             <Col>
                 <Card style={{ width: '18rem' }} className="card">
                     <Link to={`/art_posts/${artPost.id}`}>
-                        <Card.Img className="card-img" variant="top" src={`http://127.0.0.1:3000${artPost.url}`} />
+                        <Card.Img className="card-img" variant="top" src={`https://hidden-thicket-87615.herokuapp.com${artPost.url}`} />
                     </Link>
                     <Card.Body>
                         <Card.Title>{artPost.title}</Card.Title>
