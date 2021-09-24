@@ -44,7 +44,7 @@ export const updateArtPost = (art_post, artPostId) => {
 
 export const deleteArtPost = (artPostId) => {
     return (dispatch) => {
-        fetch(`https://hidden-thicket-87615.herokuapp.com/art_posts/${artPostId}`, {
+        fetch(`https://hidden-thicket-87615.herokuapp.com/${artPostId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

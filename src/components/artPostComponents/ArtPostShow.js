@@ -25,7 +25,7 @@ function ArtPostShow({artPost, routeInfo}) {
     return (
         <div id="show">
             <h1>{artPost.title}</h1>
-            <img id="show-img" alt="art" src={`https://hidden-thicket-87615.herokuapp.com${artPost.url}`}/>
+            <img id="show-img" alt="art" src={`https://hidden-thicket-87615.herokuapp.com${artPost.url}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1492037766660-2a56f9eb3fcb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=zach-key-rKE6rXOl14U-unsplash.jpg"}}/>
             <p>${artPost.price}</p>
             <p>{artPost.description}</p>
             <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
