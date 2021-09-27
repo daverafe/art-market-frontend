@@ -11,49 +11,12 @@ import {Container, Row} from 'react-bootstrap'
 function ArtPostsContainer() {
 
     const [search, setSearch] = useState("")
-    // const [sort, setSort] = useState(false)
     const artPosts = useSelector(state => state.art.art_posts)
 
 
     const handleChange = (event) => {
         setSearch(event.target.value)
     }
-
-    // const handleClick = () => {
-    //     if(sort === false){
-    //         artPosts.sort(sortArtPostByTitle)
-    //         setSort(true)
-    //     } else if (sort === true){
-    //         artPosts.sort(sortArtPostById)
-    //         setSort(false)
-    //     }
-    // }
-
-    // const sortArtPostByTitle = (art1, art2) => {
-    //     const firstArtPost = art1.title.toLowerCase()
-    //     const secondArtPost = art2.title.toLowerCase()
-
-    //     let comparison = 0
-    //     if(firstArtPost > secondArtPost){
-    //         comparison = 1
-    //     } else if(firstArtPost < secondArtPost) {
-    //         comparison = -1
-    //     } 
-    //     return comparison 
-    // }
-
-    // const sortArtPostById = (art1, art2) => {
-    //     const firstArtPost = art1.id
-    //     const secondArtPost = art2.id
-
-    //     let comparison = 0
-    //     if(firstArtPost > secondArtPost){
-    //         comparison = 1
-    //     } else if(firstArtPost < secondArtPost) {
-    //         comparison = -1
-    //     } 
-    //     return comparison 
-    // }
 
 
     const filteredArtPosts = artPosts.filter(art => {
@@ -65,7 +28,6 @@ function ArtPostsContainer() {
         <Switch>
             <Route exact path="/art_posts">
                 <ArtPostSearchForm handleChange={handleChange}/>
-                {/* <Button onClick={() => handleClick()}>Sort</Button> */}
                 <Container>
                     <Row>
                         {filteredArtPosts.map(artPost => {
