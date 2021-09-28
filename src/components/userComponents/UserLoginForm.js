@@ -28,7 +28,7 @@ function UserLoginForm(props) {
     
     
     return (
-        <div id="user-login-form">
+        <div className="user-form">
             <h1>Login To Sell</h1>
             <Form onSubmit={(event) => handleSubmit(event)}>
                 <Form.Control id="input-email-log" type="email" placeholder="Email" name="email" value={userValues.email} onChange={(event) => handleChange(event)}/>

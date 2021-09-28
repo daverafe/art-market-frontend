@@ -22,20 +22,26 @@ input {
   padding: 5px;
 }
 
+.row {
+  padding-left: 40px;
+}
+
 .card {
   margin-top: 20px;
 }
 
 h1 {
   color: white;
+  -webkit-text-stroke: 1px black;
 }
 
 #homepage-top {
+  padding-top: 50px;
   padding-bottom: 100px;
   color: white;
   font-weight: bold;
   -webkit-text-stroke: 1px black;
-  background-image: url("https://images.unsplash.com/photo-1460398495418-62c9b5d79fbf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTN8fGFydHxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60");
+  background-image: url("https://images.unsplash.com/photo-1594523960192-62b92c04089d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGdyYWZmaXRpfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60");
   background-size: cover;
 }
 
@@ -50,8 +56,8 @@ h1 {
   width: 100%;
 }
 
-#homepage-bottom button {
-  width: 15%;
+#homepage-bottom h2 {
+  padding-top: 10px;
   font-weight: bold;
 }
 
@@ -140,3 +146,16 @@ label {
   margin-right: auto;
   margin-left: auto;
 }
+
+.user-form {
+  margin-top: 20px;
+}
+
+#art-post-create-form {
+  margin-top: 20px;
+}
+
+#art-post-create-form h3 {
+  -webkit-text-stroke: 1px black;
+}
+

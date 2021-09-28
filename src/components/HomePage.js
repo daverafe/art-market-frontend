@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {Button} from 'react-bootstrap'
+import {Button, Container, Row, Col, Card} from 'react-bootstrap'
 
 function HomePage() {
     return (
@@ -18,14 +18,46 @@ function HomePage() {
             </div>
             <div id="homepage-bottom">
                 <h2>HOW IT WORKS</h2>
-                <h4>1. Create an account</h4>
-                <h4>2. Post your art</h4>
-                <h4>3. Share with the world</h4>
-                <h4>***</h4>
-                <h3>Click here to browse the art</h3>
-                <Link to="/art_posts">
-                    <Button variant="secondary">Art</Button>{' '}
-                </Link>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Card style={{ width: '18rem' }} className="card">
+                            <Link to="/signup">
+                                <Card.Img className="card-img" variant="top" src="https://images.unsplash.com/photo-1554252117-53f26a5ebdbd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGZvcm18ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"/>
+                            </Link>
+                            <Card.Body>
+                                <Card.Text>
+                                    <h4>Create an account</h4>
+                                </Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style={{ width: '18rem' }} className="card">
+                            <Link to="/login">
+                                <Card.Img className="card-img" variant="top" src="https://images.unsplash.com/photo-1521575107034-e0fa0b594529?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9zdHxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                            </Link>
+                            <Card.Body>
+                                <Card.Text>
+                                    <h4>Post your art</h4>
+                                </Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Col>
+                        <Col>
+                            <Card style={{ width: '18rem' }} className="card">
+                            <Link to="/art_posts">
+                                <Card.Img className="card-img" variant="top" src="https://images.unsplash.com/photo-1557821552-17105176677c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvcHBpbmclMjBjYXJ0fGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" />
+                            </Link>
+                            <Card.Body>
+                                <Card.Text>
+                                    <h4>Shop the art</h4>
+                                </Card.Text>
+                            </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         </>
     )

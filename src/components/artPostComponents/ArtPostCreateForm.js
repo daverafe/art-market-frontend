@@ -56,17 +56,13 @@ function ArtPostCreateForm(props) {
         <div id="art-post-create-form">
             <h1>Create A New Art Post</h1>
             <Form onSubmit={(event) => handleSubmit(event)}>
-                <Form.Label>Title:</Form.Label>
-                <Form.Control id="input-text" type="text" name="title" value={artValues.title} onChange={(event) => handleChange(event)}/>
-                <br/>
-                <Form.Label>Upload Image:</Form.Label>
+                <Form.Control id="input-text" type="text" placeholder="Title" name="title" value={artValues.title} onChange={(event) => handleChange(event)}/>
+                <Form.Label><h3>Upload Image</h3></Form.Label>
                 <Form.Control id="input-file" type="file" name="image" onChange={(event) => handleFile(event)}/>
                 <br/>
-                <Form.Label>Price:</Form.Label>
-                <Form.Control id="input-price" type="number" name="price" value={artValues.price} onChange={(event) => handleChange(event)}/>
+                <Form.Control id="input-price" type="number" placeholder="Price" name="price" value={artValues.price} onChange={(event) => handleChange(event)}/>
                 <br/>
-                <Form.Label>Description:</Form.Label>
-                <Form.Control id="input-description" type="text" name="description" value={artValues.description} onChange={(event) => handleChange(event)}/>
+                <Form.Control id="input-description" type="text" placeholder="Description" name="description" value={artValues.description} onChange={(event) => handleChange(event)}/>
                 <Button className="form-bttns" type="submit" variant="primary">Create</Button>
             </Form>
         </div>
