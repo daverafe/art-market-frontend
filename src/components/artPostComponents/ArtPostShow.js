@@ -24,18 +24,24 @@ function ArtPostShow({artPost, routeInfo}) {
     }
 
     return (
-        <div id="show">
-            <h1>{artPost.title}</h1>
-            <img id="show-img" alt="art" src={`${baseURL + artPost.url}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1492037766660-2a56f9eb3fcb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=zach-key-rKE6rXOl14U-unsplash.jpg"}}/>
-            <p>${artPost.price}</p>
-            <p>{artPost.description}</p>
-            <Button variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
-            { currentUser && currentUser.id === artPost.user_id ? 
-                <Link to={`/art_posts/${artPost.id}/edit`}>
-                    <Button variant="info">Edit Post</Button>
-                </Link> : null}
-            { currentUser && currentUser.id === artPost.user_id ? 
-                <Button variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button> : null}
+        <div id="show-box">
+            <div id="show-img-box">
+                <img id="show-img" alt="art" src={`${baseURL + artPost.url}`} onError={(e)=>{e.target.onerror = null; e.target.src="https://images.unsplash.com/photo-1492037766660-2a56f9eb3fcb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=zach-key-rKE6rXOl14U-unsplash.jpg"}}/>
+            </div>
+            <div id="show-details">
+                <h1>{artPost.title}</h1>
+                <br/>
+                <h3>${artPost.price}</h3>
+                <h3>{artPost.description}</h3>
+                <br/>
+                <Button className="show-bttns" variant="primary" onClick={() => handleAddToCart(artPost)}>Add To Cart</Button>
+                { currentUser && currentUser.id === artPost.user_id ? 
+                    <Link to={`/art_posts/${artPost.id}/edit`}>
+                        <Button className="show-bttns" variant="info">Edit Post</Button>
+                    </Link> : null}
+                { currentUser && currentUser.id === artPost.user_id ? 
+                    <Button className="show-bttns" variant="danger" onClick={() => handleDelete(artPost.id)}>Delete</Button> : null}
+            </div>
         </div>
     )
 }

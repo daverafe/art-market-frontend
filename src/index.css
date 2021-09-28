@@ -61,18 +61,34 @@ h1 {
   font-weight: bold;
 }
 
-#show p {
-  color: white;
-  font-weight: bold; 
-}
-
 label {
   color: white;
 }
 
+#show-box {
+  padding: 20px;
+}
+
+#show-details {
+  color: white;
+  font-weight: bold; 
+}
+
+#show-img-box {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+
 #show-img {
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 550px;
+  border: 2px solid black;
+}
+
+.show-bttns {
+  width: 30%;
+  margin-bottom: 20px;
 }
 
 .card-img {
@@ -141,6 +157,27 @@ label {
 }
 
 #input-password-log {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-edit-title {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-edit-price {
+  width: 30%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#input-edit-description {
   width: 30%;
   display: block;
   margin-right: auto;

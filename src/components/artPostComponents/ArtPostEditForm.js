@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import {updateArtPost} from '../../actions/artActions'
-import {Button} from 'react-bootstrap'
+import {Button, Form} from 'react-bootstrap'
 
 function ArtPostEditForm({artPost, routeInfo}) {
     
@@ -33,12 +33,14 @@ function ArtPostEditForm({artPost, routeInfo}) {
     return (
         <div id="art-post-edit-form">
         <h1>Edit Art Post</h1>
-        <form onSubmit={(event) => handleSubmit(event)}>
-            <input type="text" name="title" value={artValues.title} placeholder="Title" onChange={(event) => handleChange(event)}/>
-            <input type="number" name="price" value={artValues.price} placeholder="Price" onChange={(event) => handleChange(event)}/>
-            <input type="text" name="description" value={artValues.description} placeholder="Description" onChange={(event) => handleChange(event)}/>
-            <Button type="submit" variant="primary">Edit</Button>
-        </form>
+        <Form onSubmit={(event) => handleSubmit(event)}>
+            <Form.Control id="input-edit-title" type="text" name="title" value={artValues.title} placeholder="Title" onChange={(event) => handleChange(event)}/>
+            <br/>
+            <Form.Control id="input-edit-price" type="number" name="price" value={artValues.price} placeholder="Price" onChange={(event) => handleChange(event)}/>
+            <br/>
+            <Form.Control id="input-edit-description" type="text" name="description" value={artValues.description} placeholder="Description" onChange={(event) => handleChange(event)}/>
+            <Button className="form-bttns" type="submit" variant="primary">Edit</Button>
+        </Form>
     </div>
     )
 }
