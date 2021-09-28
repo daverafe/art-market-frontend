@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { addArtPost } from '../../actions/artActions'
 import { DirectUpload } from 'activestorage';
 import {Button, Form} from 'react-bootstrap'
+import {baseURL} from '../../actions/artActions'
 
 function ArtPostCreateForm(props) {
 
@@ -28,7 +29,7 @@ function ArtPostCreateForm(props) {
     }
 
     const uploadFile = (artValues) => {
-        const upload = new DirectUpload(artValues.image, 'https://hidden-thicket-87615.herokuapp.com/rails/active_storage/direct_uploads')
+        const upload = new DirectUpload(artValues.image, `${baseURL}/rails/active_storage/direct_uploads`)
         upload.create((error, blob) => {
             if(error) {
                 console.log(error)

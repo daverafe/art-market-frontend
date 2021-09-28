@@ -1,6 +1,8 @@
+import {baseURL} from './artActions'
+
 export const fetchUsers = () => {
     return (dispatch) => {
-        fetch('https://hidden-thicket-87615.herokuapp.com/users')
+        fetch(`${baseURL}/users`)
         .then(resp => resp.json())
         .then(users => {
             dispatch({type: "GET_USERS", payload: users})
@@ -10,7 +12,7 @@ export const fetchUsers = () => {
 
 export const addUser = (user) => {
     return (dispatch) => {
-        fetch('https://hidden-thicket-87615.herokuapp.com/users', {
+        fetch(`${baseURL}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -29,7 +31,7 @@ export const addUser = (user) => {
 
 export const loginUser = (user) => {
     return (dispatch) => {
-        fetch('https://hidden-thicket-87615.herokuapp.com/login', {
+        fetch(`${baseURL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

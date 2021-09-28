@@ -1,6 +1,8 @@
+export const baseURL = 'https://hidden-thicket-87615.herokuapp.com'
+
 export const fetchArt = () => {
     return (dispatch) => {
-        fetch('https://hidden-thicket-87615.herokuapp.com/art_posts')
+        fetch(`${baseURL}/art_posts`)
         .then(resp => resp.json())
         .then(artPosts => {
             dispatch({type: "ADD_ART", payload: artPosts})
@@ -10,7 +12,7 @@ export const fetchArt = () => {
 
 export const addArtPost = (art_post, blob) => {
     return (dispatch) => {
-        fetch('https://hidden-thicket-87615.herokuapp.com/art_posts', {
+        fetch(`${baseURL}/art_posts`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -27,7 +29,7 @@ export const addArtPost = (art_post, blob) => {
 
 export const updateArtPost = (art_post, artPostId) => { 
     return (dispatch) => {
-        fetch(`https://hidden-thicket-87615.herokuapp.com/art_posts/${artPostId}`, {
+        fetch(`${baseURL}/art_posts/${artPostId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -44,7 +46,7 @@ export const updateArtPost = (art_post, artPostId) => {
 
 export const deleteArtPost = (artPostId) => {
     return (dispatch) => {
-        fetch(`https://hidden-thicket-87615.herokuapp.com/art_posts/${artPostId}`, {
+        fetch(`${baseURL}/art_posts/${artPostId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
