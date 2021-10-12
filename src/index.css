@@ -72,7 +72,7 @@ label {
 
 #show-details {
   color: white;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 #show-img-box {
@@ -219,4 +219,26 @@ label {
     width: 100%;
     text-align: center;
   }
+  #show-img {
+    height: 300px;
+    width: 350px;
+    border: 2px solid black;
+  }
+  #show-img-box {
+    width: 50%;
+  }
+  #show-details {
+    padding-left: 20px;
+    width: 60%;
+    color: white;
+    font-weight: bold;
+  }
+  #show-box {
+    padding: 45px;
+  }
+  .show-bttns {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
 }
