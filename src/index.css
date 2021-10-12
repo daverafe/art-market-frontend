@@ -220,24 +220,20 @@ label {
     text-align: center;
   }
   #show-img {
-    height: 300px;
-    width: 350px;
+    height: 275px;
+    width: 300px;
     border: 2px solid black;
   }
   #show-img-box {
-    width: 50%;
+    width: 100%;
   }
   #show-details {
-    padding-left: 20px;
-    width: 60%;
+    width: 100%;
     color: white;
     font-weight: bold;
   }
-  #show-box {
-    padding: 45px;
-  }
   .show-bttns {
-    width: 50%;
+    width: 60%;
     margin-bottom: 20px;
   }
   
